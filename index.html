@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      UK Smart Controls | Fire Alarm, CCTV, Access Control & Networking
+    </title>
+    <meta
+      name="description"
+      content="UK Smart Controls provides fire alarm, door access control, networking, CCTV installation and maintenance services across the UK."
+    />
+    <style>
+      :root {
+        --ink: #111827;
+        --muted: #5b6673;
+        --line: #d8e0e6;
+        --paper: #f6f8fa;
+        --white: #ffffff;
+        --red: #c62828;
+        --teal: #087f8c;
+        --green: #188a5f;
+        --navy: #172333;
+        --yellow: #f3b43f;
+        --shadow: 0 22px 55px rgba(21, 31, 45, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.94);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(14px);
+      }
+
+      .nav {
+        width: min(1160px, calc(100% - 32px));
+        margin: 0 auto;
+        min-height: 74px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0;
+        color: var(--navy);
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 8px;
+        background: var(--navy);
+        color: var(--white);
+        display: grid;
+        place-items: center;
+        font-weight: 900;
+        box-shadow: inset 0 -5px 0 var(--red);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        color: #344150;
+        font-size: 0.95rem;
+      }
+
+      .nav-links a {
+        padding: 8px 0;
+      }
+
+      .nav-cta,
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 44px;
+        border-radius: 8px;
+        padding: 0 18px;
+        background: var(--red);
+        color: var(--white);
+        font-weight: 700;
+        border: 0;
+        box-shadow: 0 12px 24px rgba(198, 40, 40, 0.18);
+      }
+
+      .button.secondary {
+        background: var(--white);
+        color: var(--navy);
+        border: 1px solid #bcc8d1;
+        box-shadow: none;
+      }
+
+      .hero {
+        background: var(--white);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-inner {
+        width: min(1160px, calc(100% - 32px));
+        margin: 0 auto;
+        min-height: calc(100vh - 74px);
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+        gap: 46px;
+        align-items: center;
+        padding: 52px 0 44px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        color: var(--teal);
+        font-weight: 800;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 28px;
+        height: 3px;
+        background: var(--teal);
+        border-radius: 999px;
+      }
+
+      h1 {
+        margin: 18px 0 18px;
+        color: var(--navy);
+        font-size: clamp(2.55rem, 6vw, 5.1rem);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .hero-copy {
+        max-width: 650px;
+        color: #4c5966;
+        font-size: 1.13rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 30px 0 28px;
+      }
+
+      .trust-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        max-width: 610px;
+      }
+
+      .trust-item {
+        border-left: 4px solid var(--yellow);
+        background: #f8fafb;
+        padding: 12px 14px;
+        color: #344150;
+        font-weight: 700;
+        min-height: 68px;
+      }
+
+      .hero-media {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-media img {
+        width: 100%;
+        aspect-ratio: 16 / 10.5;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        border: 1px solid #cfd9df;
+      }
+
+      section {
+        padding: 74px 0;
+      }
+
+      .wrap {
+        width: min(1160px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 28px;
+        align-items: end;
+        margin-bottom: 30px;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        max-width: 680px;
+        color: var(--navy);
+        font-size: clamp(2rem, 4vw, 3.1rem);
+        line-height: 1.05;
+        letter-spacing: 0;
+      }
+
+      .section-head p {
+        margin: 0;
+        max-width: 390px;
+        color: var(--muted);
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 22px;
+        min-height: 245px;
+        box-shadow: 0 10px 26px rgba(21, 31, 45, 0.06);
+      }
+
+      .icon {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        margin-bottom: 18px;
+        color: var(--white);
+        font-size: 1.35rem;
+        font-weight: 900;
+      }
+
+      .fire {
+        background: var(--red);
+      }
+      .access {
+        background: var(--teal);
+      }
+      .network {
+        background: var(--green);
+      }
+      .cctv {
+        background: var(--navy);
+      }
+
+      .card h3 {
+        margin: 0 0 10px;
+        color: var(--navy);
+        font-size: 1.18rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .band {
+        background: var(--navy);
+        color: var(--white);
+      }
+
+      .band .section-head h2,
+      .band .section-head p {
+        color: var(--white);
+      }
+
+      .process {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .step {
+        background: #1f3043;
+        padding: 24px;
+        min-height: 210px;
+      }
+
+      .step strong {
+        display: inline-grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        background: var(--yellow);
+        color: #111827;
+        margin-bottom: 18px;
+      }
+
+      .step h3 {
+        margin: 0 0 8px;
+        font-size: 1.1rem;
+      }
+
+      .step p {
+        margin: 0;
+        color: #d2dce5;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 34px;
+        align-items: start;
+      }
+
+      .notice {
+        background: var(--white);
+        border-left: 6px solid var(--red);
+        padding: 28px;
+        border-radius: 8px;
+        box-shadow: 0 10px 26px rgba(21, 31, 45, 0.06);
+      }
+
+      .notice h2 {
+        margin: 0 0 12px;
+        color: var(--navy);
+        font-size: 2rem;
+        line-height: 1.1;
+      }
+
+      .notice p {
+        margin: 0 0 18px;
+        color: var(--muted);
+      }
+
+      .checks {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .check {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 18px;
+        min-height: 92px;
+        font-weight: 700;
+        color: #263443;
+      }
+
+      .check span {
+        display: block;
+        color: var(--muted);
+        font-weight: 400;
+        margin-top: 6px;
+      }
+
+      .contact {
+        background: var(--white);
+        border-top: 1px solid var(--line);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .contact-panel {
+        background: var(--navy);
+        color: var(--white);
+        border-radius: 8px;
+        padding: 34px;
+      }
+
+      .contact-panel h2 {
+        margin: 0 0 14px;
+        font-size: 2.2rem;
+        line-height: 1.08;
+      }
+
+      .contact-panel p {
+        color: #d2dce5;
+        margin: 0 0 24px;
+      }
+
+      .contact-line {
+        padding: 14px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        color: #eef4f6;
+      }
+
+      form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        background: #f8fafb;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 24px;
+      }
+
+      label {
+        display: grid;
+        gap: 7px;
+        color: #2d3946;
+        font-weight: 700;
+        font-size: 0.93rem;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid #c5d0d8;
+        border-radius: 8px;
+        min-height: 46px;
+        padding: 11px 12px;
+        font: inherit;
+        background: var(--white);
+        color: var(--ink);
+      }
+
+      textarea,
+      .full {
+        grid-column: 1 / -1;
+      }
+
+      textarea {
+        min-height: 116px;
+        resize: vertical;
+      }
+
+      .form-note {
+        grid-column: 1 / -1;
+        color: var(--muted);
+        font-size: 0.92rem;
+        margin: 0;
+      }
+
+      footer {
+        background: #0f1824;
+        color: #cfd8df;
+        padding: 28px 0;
+      }
+
+      .foot {
+        width: min(1160px, calc(100% - 32px));
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 920px) {
+        .nav {
+          min-height: auto;
+          padding: 14px 0;
+          align-items: flex-start;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .hero-inner,
+        .split,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-inner {
+          min-height: auto;
+        }
+
+        .services,
+        .process {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .section-head {
+          display: block;
+        }
+
+        .section-head p {
+          margin-top: 12px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .nav-cta {
+          display: none;
+        }
+
+        .hero-inner,
+        section {
+          padding-top: 44px;
+          padding-bottom: 44px;
+        }
+
+        .trust-row,
+        .services,
+        .process,
+        .checks,
+        form {
+          grid-template-columns: 1fr;
+        }
+
+        .card,
+        .step {
+          min-height: auto;
+        }
+
+        h1 {
+          font-size: 2.65rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#">
+          <span class="brand-mark" aria-hidden="true"
+            ><img
+              src="https://www.image2url.com/r2/default/images/1783577924145-20073ab1-a406-446e-9da6-84487ca5d461.png"
+              alt="UK"
+          /></span>
+          <span>UK Smart Controls</span>
+        </a>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#maintenance">Maintenance</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="nav-cta" href="#contact">Request Survey</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <span class="eyebrow">Fire and security specialists</span>
+            <h1>Smart control systems for safer buildings.</h1>
+            <p class="hero-copy">
+              UK Smart Controls designs, installs and supports fire alarm, door
+              access control, networking and CCTV systems for homes, offices,
+              shops, warehouses and commercial sites.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#contact">Book a Site Visit</a>
+              <a class="button secondary" href="#services">View Services</a>
+            </div>
+            <div class="trust-row" aria-label="Company strengths">
+              <div class="trust-item">Installation and commissioning</div>
+              <div class="trust-item">Planned maintenance</div>
+              <div class="trust-item">Commercial and residential</div>
+            </div>
+          </div>
+          <div class="hero-media">
+            <img
+              src="https://www.image2url.com/r2/default/images/1783578084785-0279dbf9-6892-463d-ba92-1cc43f71420b.png"
+              alt="Integrated fire alarm, CCTV, access control and networking equipment illustration"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>One team for your essential building systems.</h2>
+            <p>
+              From first survey to final handover, we keep the work clear, tidy
+              and aligned with how your property is used day to day.
+            </p>
+          </div>
+          <div class="services">
+            <article class="card">
+              <div class="icon fire" aria-hidden="true">F</div>
+              <h3>Fire Alarm Systems</h3>
+              <p>
+                Detection, sounders, manual call points, panels, testing and
+                maintenance for reliable building protection.
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon access" aria-hidden="true">A</div>
+              <h3>Door Access Control</h3>
+              <p>
+                Keypads, fobs, magnetic locks, entry permissions and secure
+                access points for staff and visitors.
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon network" aria-hidden="true">N</div>
+              <h3>Networking</h3>
+              <p>
+                Structured cabling, data points, racks, patching and
+                connectivity for CCTV, access and office systems.
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon cctv" aria-hidden="true">C</div>
+              <h3>CCTV Installation</h3>
+              <p>
+                Camera placement, recording setup, remote viewing and upgrades
+                for clearer coverage and control.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" id="process">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>A practical process from survey to support.</h2>
+            <p>
+              We plan around your site, your risks and your budget before
+              installing the right equipment in the right places.
+            </p>
+          </div>
+          <div class="process">
+            <article class="step">
+              <strong>1</strong>
+              <h3>Survey</h3>
+              <p>
+                We review entrances, escape routes, cable paths, camera views
+                and existing equipment.
+              </p>
+            </article>
+            <article class="step">
+              <strong>2</strong>
+              <h3>Design</h3>
+              <p>
+                You receive a clear recommendation covering devices, placement
+                and installation scope.
+              </p>
+            </article>
+            <article class="step">
+              <strong>3</strong>
+              <h3>Install</h3>
+              <p>
+                Our engineers fit, connect and configure the system with care
+                for the working environment.
+              </p>
+            </article>
+            <article class="step">
+              <strong>4</strong>
+              <h3>Support</h3>
+              <p>
+                We provide handover, maintenance options and help when your site
+                needs changes.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="maintenance">
+        <div class="wrap split">
+          <div class="notice">
+            <h2>Keep your systems ready when they are needed.</h2>
+            <p>
+              Regular checks help reduce faults, improve reliability and keep
+              critical fire and security equipment performing properly.
+            </p>
+            <a class="button" href="#contact">Ask About Maintenance</a>
+          </div>
+          <div class="checks">
+            <div class="check">
+              Fire alarm testing<span
+                >Routine inspections, fault finding and panel checks.</span
+              >
+            </div>
+            <div class="check">
+              CCTV health checks<span
+                >Camera views, recordings, storage and remote access.</span
+              >
+            </div>
+            <div class="check">
+              Access control updates<span
+                >User changes, door hardware and entry permissions.</span
+              >
+            </div>
+            <div class="check">
+              Network support<span
+                >Cabling, patching and connectivity improvements.</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="wrap contact-grid">
+          <div class="contact-panel">
+            <h2>Tell us what your building needs.</h2>
+            <p>
+              Share a few details and UK Smart Controls can arrange a survey,
+              quote or maintenance discussion.
+            </p>
+            <div class="contact-line">Service area: All Over India</div>
+            <div class="contact-line">
+              Systems: Fire Alarm System, CCTV, Door Access Control, IT
+              Networking, Voice Intercomm
+            </div>
+            <div class="contact-line">
+              For: Homes, offices, retail and commercial sites,etc....
+            </div>
+            <div class="contact-line">
+              Name : D.UADYA KUMAR, Email : uksmartcontrols@gmail.com, Contact
+              No : +91 88702 45622, +91 91763 55784
+            </div>
+          </div>
+          <form>
+            <label
+              >Name
+              <input
+                type="text"
+                name="name"
+                autocomplete="name"
+                placeholder="Your name"
+              />
+            </label>
+            <label
+              >Phone or Email
+              <input
+                type="text"
+                name="contact"
+                autocomplete="email"
+                placeholder="How should we contact you?"
+              />
+            </label>
+            <label
+              >Service
+              <select name="service">
+                <option>Fire alarm</option>
+                <option>Door access control</option>
+                <option>Networking</option>
+                <option>CCTV installation</option>
+                <option>Maintenance</option>
+                <option>Multiple services</option>
+              </select>
+            </label>
+            <label
+              >Property Type
+              <select name="property">
+                <option>Commercial</option>
+                <option>Residential</option>
+                <option>Retail</option>
+                <option>Warehouse</option>
+                <option>Office</option>
+              </select>
+            </label>
+            <label class="full"
+              >Message
+              <textarea
+                name="message"
+                placeholder="Briefly describe the site, system or issue."
+              ></textarea>
+            </label>
+            <p class="form-note">
+              This demo form is ready for connection to your email or website
+              backend.
+            </p>
+            <button class="button full" type="button">Send Enquiry</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="foot">
+        <span>UK Smart Controls</span>
+        <span
+          >Fire Alarm | Door Access Control | Networking | CCTV
+          Installation</span
+        >
+      </div>
+    </footer>
+  </body>
+</html>
